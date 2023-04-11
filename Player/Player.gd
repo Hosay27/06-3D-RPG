@@ -4,7 +4,7 @@ onready var Camera = $Pivot/Camera
 onready var Pivot = $Pivot
 
 var velocity = Vector3()
-var gravity = -9.8
+var gravity = -12
 var speed = 0.4
 var max_speed = 6
 var jump_power = 10
@@ -28,6 +28,8 @@ func _physics_process(_delta):
 	velocity.y = falling
 	jump()
 	velocity = move_and_slide(velocity,Vector3.UP,true)
+	if global_transform.origin.y <= -10:
+		queue_free()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -58,7 +60,8 @@ func Hit(d):
 		Global.update_health(d)
 		$Effect.play("Flash")
 		if Global.health <= 0:
-			get_tree().quit()
+			Global.health = 10
+			queue_free()
 
 func _on_Invincible_timeout():
 	$Effect.play("Normal")

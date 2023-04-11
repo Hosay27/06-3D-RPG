@@ -5,7 +5,8 @@ onready var Dialogue = get_node("/root/Game/UI/Dialouge")
 var dialogue = [
 	"Hello",
 	"How are you?",
-	"You're Gay"
+	"You're Gay",
+	"asdaskdljaldjlkajwdpqwiuhghvcbqxwxklqwjxjqwkld qwjdkljkqldjqkldjqd qdqkjldjqldjqldaodx"
 ]
 
 func _ready():

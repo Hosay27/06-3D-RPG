@@ -30,6 +30,8 @@ margin_right = 256.0
 margin_bottom = 250.0
 bbcode_enabled = true
 bbcode_text = "[center]Hello[/center]"
+visible_characters = 0
+percent_visible = 0.0
 text = "Hello"
 
 [node name="Text_speed" type="Tween" parent="."]
