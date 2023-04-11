@@ -4,10 +4,12 @@ Context and date
 Description
 
 ## Implementation
-Which features you included
+- music and sound effects
 
 ## References
+-[music] (https://opengameart.org/content/4-chiptunes-adventure)
 
 ## Future Development
-
+none
 ## Created by
+Jose Bautista-Martinez
