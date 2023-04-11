@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://Platform.tres" type="MeshLibrary" id=2]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://NPC/NPC.tscn" type="PackedScene" id=3]
-[ext_resource path="res://UI/Dialouge.tscn" type="PackedScene" id=4]
-[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
-[ext_resource path="res://UI/Menu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/Dialouge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Platform.tres" type="MeshLibrary" id=6]
+[ext_resource path="res://Hazards/Spike.tscn" type="PackedScene" id=7]
 
 [sub_resource type="PhysicsMaterial" id=3]
 
@@ -21,7 +22,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40241, -2.31028 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0964, 1.72554 )
 
 [node name="Platforms" type="GridMap" parent="."]
-mesh_library = ExtResource( 2 )
+mesh_library = ExtResource( 6 )
 physics_material = SubResource( 3 )
 cell_size = Vector3( 1, 2, 1 )
 cell_center_x = false
@@ -37,19 +38,23 @@ __meta__ = {
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Dialouge" parent="UI" instance=ExtResource( 4 )]
+[node name="Dialouge" parent="UI" instance=ExtResource( 5 )]
 visible = false
 
-[node name="HUD" parent="UI" instance=ExtResource( 5 )]
+[node name="HUD" parent="UI" instance=ExtResource( 2 )]
 visible = false
 
-[node name="Menu" parent="UI" instance=ExtResource( 6 )]
+[node name="Menu" parent="UI" instance=ExtResource( 4 )]
 visible = false
 
 [node name="Forest" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36018, -8.07757 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Forest"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95888, -8.02053 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.05555, 0 )
 shape = SubResource( 4 )
+
+[node name="Spike" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21712, 2.26557, 8.48573 )
 
 [connection signal="area_shape_entered" from="Forest" to="." method="_on_Forest_area_shape_entered"]

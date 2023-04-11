@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://Platform.tres" type="MeshLibrary" id=2]
-[ext_resource path="res://NPC/NPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/Menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Dialouge.tscn" type="PackedScene" id=4]
-[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
-[ext_resource path="res://UI/Menu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://NPC/NPC.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Platform.tres" type="MeshLibrary" id=6]
 
 [sub_resource type="PhysicsMaterial" id=3]
 
@@ -17,11 +17,11 @@ script = ExtResource( 1 )
 [node name="Spawn" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40241, -2.31028 )
 
-[node name="NPC" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0964, 1.72554 )
+[node name="NPC" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25849, 1.72554 )
 
 [node name="Platforms" type="GridMap" parent="."]
-mesh_library = ExtResource( 2 )
+mesh_library = ExtResource( 6 )
 physics_material = SubResource( 3 )
 cell_size = Vector3( 1, 2, 1 )
 cell_center_x = false
@@ -40,16 +40,16 @@ __meta__ = {
 [node name="Dialouge" parent="UI" instance=ExtResource( 4 )]
 visible = false
 
-[node name="HUD" parent="UI" instance=ExtResource( 5 )]
+[node name="HUD" parent="UI" instance=ExtResource( 3 )]
 visible = false
 
-[node name="Menu" parent="UI" instance=ExtResource( 6 )]
+[node name="Menu" parent="UI" instance=ExtResource( 2 )]
 visible = false
 
-[node name="Forest" type="Area" parent="."]
+[node name="Main" type="Area" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="Forest"]
+[node name="CollisionShape" type="CollisionShape" parent="Main"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95888, -8.02053 )
 shape = SubResource( 4 )
 
-[connection signal="area_shape_entered" from="Forest" to="." method="_on_Forest_area_shape_entered"]
+[connection signal="body_entered" from="Main" to="." method="_on_Main_body_entered"]
