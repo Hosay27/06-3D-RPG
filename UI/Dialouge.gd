@@ -2,7 +2,7 @@ extends Control
 
 var dialouge = []
 var dialouge_pos = 0
-var reveal_time = 0.9
+var reveal_time = 1
 
 signal finished_dialouge
 
@@ -12,8 +12,7 @@ func _physics_process(_delta):
 		if $Text.bbcode_text != d:
 			$Text.bbcode_text = d
 		if Input.is_action_just_pressed("talk"):
-			var time = dialouge.size()/reveal_time
-			$Text_speed.interpolate_property($Text, "percent_visible", 0, 1, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+			$Text_speed.interpolate_property($Text, "percent_visible", 0, 1, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			$Text_speed.start()
 			dialouge_pos += 1
 	elif dialouge.size():
@@ -26,8 +25,7 @@ func _ready():
 func start_dialouge(d):
 	dialouge = d.duplicate()
 	dialouge_pos = 0
-	var time = dialouge.size()/reveal_time
-	$Text_speed.interpolate_property($Text, "percent_visible", 0, 1, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Text_speed.interpolate_property($Text, "percent_visible", 0, 1, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Text_speed.start()
 	show()
 

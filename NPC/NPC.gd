@@ -1,7 +1,9 @@
 extends KinematicBody
 
 onready var Dialogue = get_node("/root/Game/UI/Dialouge")
-	
+var time = 1
+var time1 = 0
+
 var dialogue = [
 	"Hello",
 	"How are you?",
@@ -11,6 +13,8 @@ var dialogue = [
 
 func _ready():
 	Dialogue.connect("finished_dialouge", self,"finished")
+	$AnimationTree.set("parameters/Idle_Change/blend_amount", 0)
+	$Timer.start()
 
 func _on_Area_body_entered(body):
 	if body.name == "Player":
@@ -22,3 +26,11 @@ func _on_Area_body_exited(body):
 
 func finished():
 	queue_free()
+
+func _on_Timer_timeout():
+	time -= .1
+	$AnimationTree.set("parameters/Idle_Change/blend_amount", 1)
+	$Timer2.start()
+
+func _on_Timer2_timeout():
+	$AnimationTree.set("parameters/Idle_Change/blend_amount", 0)
