@@ -8,8 +8,8 @@
 	"name": "NPC",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 0,
-	"offset_y": 0,
+	"offset_x": 50,
+	"offset_y": -220,
 	"portraits": [
 		{
 			"name": "Default",
