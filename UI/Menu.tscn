@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://UI/Pause.gd" type="Script" id=1]
+[ext_resource path="res://UI/Menu.gd" type="Script" id=1]
+
+[sub_resource type="Theme" id=1]
 
 [node name="Menu" type="Control"]
 pause_mode = 2
@@ -22,6 +24,7 @@ margin_left = -50.0
 margin_top = -20.0
 margin_right = 50.0
 margin_bottom = 20.0
+theme = SubResource( 1 )
 text = "Quit"
 
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

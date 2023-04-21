@@ -1,19 +1,35 @@
 {
 	"color": "#ffff0000",
 	"description": "",
-	"display_name": "Sarah",
+	"display_name": "Samantha",
 	"display_name_bool": true,
 	"id": "character-1681258573.json",
-	"mirror_portraits": false,
+	"mirror_portraits": true,
 	"name": "NPC",
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 50,
-	"offset_y": -220,
+	"offset_y": -210,
 	"portraits": [
 		{
 			"name": "Default",
 			"path": "res://Assets/npc.png"
+		},
+		{
+			"name": "npc_angry",
+			"path": "res://Assets/npc_angry.png"
+		},
+		{
+			"name": "npc_expression",
+			"path": "res://Assets/npc_expression.png"
+		},
+		{
+			"name": "npc_happy",
+			"path": "res://Assets/npc_happy.png"
+		},
+		{
+			"name": "npc_sad",
+			"path": "res://Assets/npc_sad.png"
 		}
 	],
 	"scale": 50,

@@ -1,14 +1,14 @@
 {
 	"events": [
 		{
-			"animation": "3-fade_in_up_big.gd",
-			"animation_length": 1,
+			"animation": "1-fade_in.gd",
+			"animation_length": 0.7,
 			"animation_wait": false,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1681258573.json",
 			"event_id": "dialogic_002",
-			"mirror_portrait": true,
+			"mirror_portrait": false,
 			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
@@ -22,6 +22,26 @@
 			"z_index": 0
 		},
 		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0.7,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1681258572.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
 			"character": "character-1681258573.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
@@ -29,36 +49,41 @@
 		},
 		{
 			"character": "character-1681258573.json",
-			"event_id": "dialogic_001",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
 			"portrait": "",
-			"text": "\"How are you?\""
+			"question": "\"How are you?\""
+		},
+		{
+			"choice": "\"I'm good\"",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
 		},
 		{
 			"character": "character-1681258573.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "\"You're Gay\""
+			"portrait": "npc_happy",
+			"text": "\"That's good!\""
 		},
 		{
-			"animation": "6-fade_out_down_big.gd",
-			"animation_length": 1,
-			"animation_wait": true,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
+			"choice": "\"I'm bad\"",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
 			"character": "character-1681258573.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 1,
-			"z_index": 0
+			"event_id": "dialogic_001",
+			"portrait": "npc_sad",
+			"text": "\"Oh...\""
+		},
+		{
+			"event_id": "dialogic_013"
 		},
 		{
 			"event_id": "dialogic_022",

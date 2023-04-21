@@ -10,7 +10,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func update_health(h):
-	health -= h
+	health = clamp(health - h, 0, 10)
 
 func update_score(s):
 	score += s

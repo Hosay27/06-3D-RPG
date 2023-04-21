@@ -10,11 +10,8 @@ func _ready():
 
 func _physics_process(_delta):
 	if not has_node("Player"):
+		Global.health = 10
 		var player = Player.instance()
 		player.name = "Player"
 		player.global_transform = Spawn.global_transform
 		add_child(player)
-		var music = get_node_or_null("/root/Game/Music")
-		var music2 = get_node_or_null("/root/Game/Music2")
-		music2.stop()
-		music.play()
