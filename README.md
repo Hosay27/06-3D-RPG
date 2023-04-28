@@ -11,7 +11,7 @@ Description
 
 - [Font](https://www.fontspace.com/sunny-spells-font-f683930)
 
-- [Materials] (https://ambientcg.com/view?id=Plastic010,)
+- [Materials] (https://ambientcg.com/view?id=Plastic010, https://ambientcg.com/view?id=Metal032)
 
 ## Future Development
 none
