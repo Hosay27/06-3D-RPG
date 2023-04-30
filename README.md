@@ -1,9 +1,9 @@
-# Project Name
+# Project Name:
 
 3D RPD made for a class project
 29 April 2023
 
-Description
+Description:
 
 ESC to pause
 
