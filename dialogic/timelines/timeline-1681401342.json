@@ -49,41 +49,45 @@
 		},
 		{
 			"character": "character-1681258573.json",
-			"event_id": "dialogic_010",
-			"options": [
-
-			],
+			"event_id": "dialogic_001",
 			"portrait": "",
-			"question": "\"How are you?\""
+			"text": "\"How's it going?"
 		},
 		{
-			"choice": "\"I'm good\"",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
+			"character": "character-1681258572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "\"It's going good so far.\""
 		},
 		{
 			"character": "character-1681258573.json",
 			"event_id": "dialogic_001",
 			"portrait": "npc_happy",
-			"text": "\"That's good!\""
-		},
-		{
-			"choice": "\"I'm bad\"",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
+			"text": "\"That's good\""
 		},
 		{
 			"character": "character-1681258573.json",
 			"event_id": "dialogic_001",
 			"portrait": "npc_sad",
-			"text": "\"Oh...\""
+			"text": "\"You should be careful around here, there's a bunch of robots and other dangers.\""
 		},
 		{
-			"event_id": "dialogic_013"
+			"character": "character-1681258573.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "\"If you want to leave then you should find the key then reach the door at the end.\""
+		},
+		{
+			"character": "character-1681258573.json",
+			"event_id": "dialogic_001",
+			"portrait": "npc_happy",
+			"text": "\"Well, good luck!\""
+		},
+		{
+			"character": "character-1681258572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "\"Uhhh, thanks.\""
 		},
 		{
 			"event_id": "dialogic_022",
@@ -93,6 +97,6 @@
 	"metadata": {
 		"dialogic-version": "1.4.5",
 		"file": "timeline-1681401342.json",
-		"name": "Npc"
+		"name": "NPC"
 	}
 }

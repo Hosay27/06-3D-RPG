@@ -2,7 +2,9 @@ extends Node
 
 var menu = null
 var score = 0
-var health = 10
+var health = 15
+var max_health = 15
+var coins = 0
 
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
@@ -10,10 +12,13 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func update_health(h):
-	health = clamp(health - h, 0, 10)
+	health = clamp(health - h, 0, max_health)
 
 func update_score(s):
 	score += s
+
+func update_coins(c):
+	coins += c
 
 func reset():
 	health = 10

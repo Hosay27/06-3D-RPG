@@ -3,6 +3,7 @@ extends KinematicBody
 onready var Camera = $Pivot/Camera
 onready var Pivot = $Pivot
 onready var animation = $AnimationPlayer
+onready var text = get_node_or_null("/root/Game/UI/HUD/Interaction")
 
 var interaction = null
 var velocity = Vector3()
@@ -33,7 +34,10 @@ func _physics_process(_delta):
 	if not $AnimationPlayer.is_playing() and is_on_floor():
 		$AnimationTree.active = true
 		$AnimationTree.set("parameters/Idle_Run/blend_amount",current_speed/max_speed)
-	jump()
+	
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		jump()
+	
 	velocity = move_and_slide(velocity,Vector3.UP,true)
 	
 	if Input.is_action_just_pressed("talk"):
@@ -80,19 +84,17 @@ func get_input():
 
 func interact():
 	if interaction.is_in_group("Interact"):
-#	if interaction != null:
-#		if interaction.has_method("interact"):
 		interaction.interact()
+		text.hide()
 
 func jump():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_power
-		$AnimationTree.active = false
-		$AnimationPlayer.playback_speed = .8
-		$AnimationPlayer.play("Jump")
-		var sound = get_node_or_null("/root/Game/Sounds/Jump")
-		if sound != null:
-			sound.play()
+	velocity.y = jump_power
+	$AnimationTree.active = false
+	$AnimationPlayer.playback_speed = .8
+	$AnimationPlayer.play("Jump")
+	var sound = get_node_or_null("/root/Game/Sounds/Jump")
+	if sound != null:
+		sound.play()
 
 func Hit(d):
 	if $Invincible.is_stopped():
@@ -102,7 +104,9 @@ func Hit(d):
 		animation.play("Flash")
 		if Global.health <= 0:
 			Global.health = 10
-			queue_free()
+			$AnimationTree.active = false
+			$AnimationPlayer.playback_speed = 1
+			$AnimationPlayer.play("Death")
 
 func _on_Invincible_timeout():
 	animation.play("Normal")
@@ -110,3 +114,16 @@ func _on_Invincible_timeout():
 
 func _on_Interact_body_entered(body):
 	interaction = body
+	if body.is_in_group("Interact"):
+		text.text = "Press [E] to interact"
+		text.show()
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Death":
+		queue_free()
+
+
+func _on_Interact_body_exited(body):
+	if body.is_in_group("Interact"):
+		text.text = "Press [E] to talk"
+		text.hide()

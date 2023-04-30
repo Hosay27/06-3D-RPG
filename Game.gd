@@ -1,8 +1,10 @@
 extends Spatial
+
 onready var Player = preload("res://Player/Player.tscn")
 onready var Spawn = $Spawn
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	var player = Player.instance()
 	player.name = "Player"
 	player.global_transform = Spawn.global_transform

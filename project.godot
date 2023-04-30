@@ -81,7 +81,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Project 06-3D-RPG"
-run/main_scene="res://Levelstuff/Main_Area.tscn"
+run/main_scene="res://UI/Main_Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -90,6 +90,7 @@ Global="*res://Global.gd"
 
 [display]
 
+window/size/fullscreen=true
 window/stretch/mode="viewport"
 
 [editor_plugins]
