@@ -12940,10 +12940,3 @@ anims/Armature002|mixamocom|Layer0001 = SubResource( 14 )
 anims/Idle1 = SubResource( 15 )
 anims/Idle2 = SubResource( 16 )
 anims/Normal = SubResource( 17 )
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -59,7 +59,7 @@ func _physics_process(_delta):
 		$AnimationPlayer.play("Shoot")
 		target.Hit(damage)
 
-	if global_transform.origin.y <= -10:
+	if global_transform.origin.y <= -5:
 		queue_free()
 
 func _input(event):

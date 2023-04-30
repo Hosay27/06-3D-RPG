@@ -12,7 +12,7 @@ func _ready():
 
 func _physics_process(_delta):
 	if not has_node("Player"):
-		Global.health = 10
+		Global.health = 15
 		var player = Player.instance()
 		player.name = "Player"
 		player.global_transform = Spawn.global_transform
